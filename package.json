@@ -1,0 +1,29 @@
+{
+  "name": "burger-app",
+  "version": "1.0.0",
+  "description": "Burger Eating App using MySql, Node, Express, Handlebars and homemade ORM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melheins/burger-app.git"
+  },
+  "keywords": [],
+  "author": "Melanie Heins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melheins/burger-app/issues"
+  },
+  "homepage": "https://github.com/melheins/burger-app",
+  "dependencies": {
+    "express": "latest",
+    "express-handlebars": "latest",
+    "method-override": "latest",
+    "body-parser": "latest",
+    "mysql": "latest",
+    "path": "latest"
+  }
+}
