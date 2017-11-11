@@ -2,24 +2,26 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var path = require('path');
 
-// Configure the Express application
+
+var port = process.env.PORT || 3000;
+
 var app = express();
-var PORT = process.env.PORT || 3000;
 
-// Expose the public directory to access CSS files
-app.use(express.static(path.join(__dirname, './app/public')));
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
 
-// Add middleware for parsing incoming request bodies
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.text());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// Add the application routes
+// Set Handlebars.
+var exphbs = require("express-handlebars");
 
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-// Start listening on PORT
-app.listen(PORT, function () {
-    console.log('Friend Finder app is listening on PORT: ' + PORT);
-});
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controller.js");
+
+app.use("/", routes);
+
+app.listen(port);

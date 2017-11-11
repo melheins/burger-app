@@ -24,6 +24,7 @@
     "method-override": "latest",
     "body-parser": "latest",
     "mysql": "latest",
-    "path": "latest"
+    "path": "latest",
+    "dotenv": "latest"
   }
 }
