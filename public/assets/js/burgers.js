@@ -16,13 +16,12 @@ $(function () {
     });
 
 
-    /****
-    $(".create-form").on("submit", function (event) {
+     $(".create-form").on("submit", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 
         var newBurger = {
-            name: $("#ca").val().trim()
+            name: $("#burgeroptions").val()
         };
 
         // Send the POST request.
@@ -31,12 +30,13 @@ $(function () {
             data: newBurger
         }).then(
             function () {
-                console.log("created new cat");
+                console.log("created new burger");
                 // Reload the page to get the updated list
                 location.reload();
             }
         );
-    });  **/
+    });
 
 
 });
+
